@@ -31,7 +31,7 @@ tag_df = pd.read_csv("tag.csv")
 def get_related_tags(predoutput):
     
     tagfilter = tag_df[tag_df['Predicted_Tag'] == predoutput]
-    return tagfilter["tags"].sample(1)
+    return tagfilter["tags"].sample(1).value
 
 # Title and Subtitle
 st.title("Tags Detector")
