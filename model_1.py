@@ -20,6 +20,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfTransformer
+import pickle
 
 #mlflow.set_tracking_uri("http://localhost:5000")
 #mlflow.start_run() 
@@ -91,3 +92,7 @@ y_pred = nb.predict(X_test)
 
 print('accuracy %s' % accuracy_score(y_pred, y_test))
 print(classification_report(y_test, y_pred))
+
+# Serialize (pickle) the model to a file
+with open('model.pkl', 'wb') as file:
+    pickle.dump(nb, file)
