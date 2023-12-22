@@ -8,13 +8,12 @@ def get_related_tags(word):
     return related_tags
 
 # Title and Subtitle
-st.title("Tags Related")
-st.subheader("Your Word")
+st.title("Tags Detector")
 
 # Input box for the word
 input_word = st.text_input("Enter your word")
 
-# Button to trigger related tags calculation
+# Button to trigger related tags
 if st.button("Get Related Tags"):
     if input_word:
         # Displaying related tags
